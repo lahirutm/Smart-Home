@@ -1,5 +1,8 @@
 # Smart-Home
-Smart Home Server for Google Home Assistant\n
-Written in PHP/MySQL/JSON\n
-OAuth Implementation\n
+Smart Home Server for Google Home Assistant
+
+Written in PHP/MySQL/JSON
+
+OAuth Implementation
+
 Web based control panel
