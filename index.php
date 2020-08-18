@@ -288,6 +288,28 @@ if(isset($results[0]['api_key'])){
     	});
     }
 
+    function set_status(device_id, status){
+        $.ajax({
+                url : "ajax/set_device_status.php",
+                cache: false,
+                data: { 'device_id':device_id,'status':status },
+                type: 'POST',
+                success : function(data) {
+                    var arr = data.split("^");
+                    if(arr[0]=="success"){
+                        alert(arr[1]);
+                        get_devices_list();
+                    }
+                    else {
+                        alert('Set device status failed ! \n' + + JSON.stringify(data));
+                    }
+                },
+                error: function(data) {
+                        console.log('Set device status error ! \n' + JSON.stringify(data));
+                }
+        });
+    }
+
 
 $(document).ready(function(){
  setInterval(get_devices_list,10000);
